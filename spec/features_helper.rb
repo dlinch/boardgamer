@@ -10,8 +10,10 @@ Capybara.server_host = 'localhost'
 Capybara.server_port = 31337
 
 RSpec.configure do |config|
+  config.use_transactional_fixtures = false
+
   config.before(:each) do
-    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.strategy = (Capybara.current_driver == :rack_test )? :transaction : :truncation
     DatabaseCleaner.start
 
     Capybara.page.driver.reset!
