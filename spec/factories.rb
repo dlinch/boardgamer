@@ -5,14 +5,10 @@ FactoryGirl.define do
   end
 
   factory :play do
-    player_ids { [build(:user), build(:user)] }
+    users { [build(:user), build(:user)] }
+    association :game
   end
 
-  factory :win do
-    user
-    play
-    game
-  end
 
   factory :game do
     name 'Ticket To Ride'
