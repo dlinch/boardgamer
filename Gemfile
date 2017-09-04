@@ -19,7 +19,6 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
 end
 
 group :development do
@@ -33,6 +32,8 @@ group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  # has_many :wins
   has_many :user_plays
   has_many :plays, through: :user_plays
 
