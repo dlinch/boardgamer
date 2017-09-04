@@ -13,6 +13,7 @@ describe '#create' do
 
     it 'should create a new user' do
       expect { post :create, params: {user: user_hash} }.to change { User.count }.by 1
+      expect(response).to redirect_to user_path(User.last.id)
       expect(User.last.full_name).to eq 'Earl Of Lemongrab'
     end
   end
@@ -58,8 +59,9 @@ describe '#create' do
 
     it 'should update the specified user' do
       expect(user.first_name).to eq 'Princess'
-      patch :update, params: {user: user_update_hash, id: user.id}
+      patch :update, params: {id: user.id, user: user_update_hash}
 
+      expect(response).to redirect_to user_path(user)
       expect(user.reload.full_name).to eq 'Magic Man'
       expect(user2.reload.first_name).to eq 'Marceline'
     end
@@ -69,6 +71,7 @@ describe '#create' do
     let!(:user) { create(:user) }
     it 'should destroy the specified user' do
       expect { delete :destroy, params: {id: user.id} }.to change { User.count }.by -1
+      expect(response).to redirect_to root_path
     end
   end
 end

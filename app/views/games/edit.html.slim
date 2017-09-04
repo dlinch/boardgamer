@@ -1,0 +1,4 @@
+= simple_form_for @game, url: game_path, html: {method: :patch} do |f|
+  = f.input :name, placeholder: 'Name', required: true
+  hr
+  = f.button :submit, 'Update'

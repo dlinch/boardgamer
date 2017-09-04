@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   def new; end
 
   def create
-     if user = User.create(user_params)
-       redirect_to user_path(user.id)
-     end
+   if user = User.create(user_params)
+     redirect_to user_path(user.id)
+   end
   end
 
   def show
