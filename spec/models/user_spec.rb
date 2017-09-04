@@ -8,4 +8,15 @@ describe User, type: :model do
       expect(subject.full_name).to eq 'Peppermint Butler'
     end
   end
+
+  describe '#wins' do
+    before do
+      create(:play, winner_id: subject.id, users: [subject])
+    end
+
+    it 'has many wins through plays' do
+      expect(subject.plays.count).to eq 1
+      expect(subject.wins.count).to eq 1
+    end
+  end
 end

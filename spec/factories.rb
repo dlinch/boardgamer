@@ -6,7 +6,7 @@ FactoryGirl.define do
 
   factory :play do
     users { [build(:user), build(:user)] }
-    association :game
+    association :game, strategy: :build
   end
 
 

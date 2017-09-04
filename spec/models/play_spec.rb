@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe Play, type: :model do
   let(:user) { create(:user, first_name: 'Jake') }
-  subject { create(:play, users: [user, build(:user)], winner_id: user.id) }
+  let(:user2) { create(:user) }
+  subject { create(:play, users: [user, user2], winner_id: user.id) }
 
   describe '#winner' do
     it 'returns an associated winner' do
@@ -11,6 +12,8 @@ describe Play, type: :model do
   end
 
   describe '#players' do
-    it 'returns players associated with a play'
+    it 'returns players associated with a play' do
+      expect(subject.players).to match_array [user, user2]
+    end
   end
 end

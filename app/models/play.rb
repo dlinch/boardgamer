@@ -6,4 +6,8 @@ class Play < ApplicationRecord
   def winner
     User.find(winner_id)
   end
+
+  def players
+    users
+  end
 end

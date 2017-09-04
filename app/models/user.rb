@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def wins
+    plays.where(winner_id: id)
+  end
 end
