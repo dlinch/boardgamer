@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bindable
+//= require chosen.jquery
 //= require_tree .
+
+
+$(function() {
+  new Bindable().bindAll();
+});
