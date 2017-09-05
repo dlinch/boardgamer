@@ -1,6 +1,6 @@
 = simple_form_for :play, url: plays_path, method: :post do |f|
   = f.input :game_id, placeholder: 'Game', required: true
-  = f.input :user_ids, placeholder: 'Players', required: true, input_html: {multiple: true}
+  = f.input :user_ids, collection: User.all, label_method: :full_name, value_method: :id, required: true, input_html: {multiple: true, data: {bindable: 'user-autocomplete', placeholder: 'Choose some players...'}}
   = f.input :winner_id, placeholder: 'Winner'
   hr
   = f.button :submit, 'Create'

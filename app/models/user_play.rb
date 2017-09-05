@@ -1,4 +1,4 @@
 class UserPlay < ApplicationRecord
   belongs_to :user
-  belongs_to :play, dependent: :destroy
+  belongs_to :play
 end
