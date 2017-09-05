@@ -1,0 +1,6 @@
+= simple_form_for :play, url: play_path, method: :post do |f|
+  = f.input :game_id, placeholder: 'Game', required: true
+  = f.input :users, placeholder: 'Players', required: true
+  = f.input :winner_id, placeholder: 'Winner', required: true
+  hr
+  = f.button :submit, 'Create'
