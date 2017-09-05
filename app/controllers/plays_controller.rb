@@ -35,6 +35,10 @@ class PlaysController < ApplicationController
   private
 
   def play_params
-    params.require(:play).permit(:winner_id, :users, :game_id)
+    params.require(:play).permit(
+    :winner_id,
+    :game_id,
+    user_ids: []
+    )
   end
 end

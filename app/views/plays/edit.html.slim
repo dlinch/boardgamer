@@ -1,6 +1,6 @@
-= simple_form_for @play, url: play_path, html: {method: :patch} do |f|
+= simple_form_for @play, url: plays_path, html: {method: :patch} do |f|
   = f.input :game_id, placeholder: 'Game', required: true
-  = f.input :users, placeholder: 'Players', required: true
+  = f.input :user_ids, placeholder: 'Players', required: true, input_html: {multiple: true}
   = f.input :winner_id, placeholder: 'Winner', required: true
   hr
   = f.button :submit, 'Update'

@@ -1,2 +1,8 @@
-h1 = @play.game
-h2 = @play.users
+h1 = @play.game&.name
+
+h2 Players
+- @play.players.each do |pl|
+    p = pl.full_name
+
+h2 Winner
+p = @play.winner&.full_name
