@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :user_plays, dependent: :destroy
   has_many :plays, through: :user_plays
+  has_many :games, through: :plays
 
   validates :first_name,
             :last_name,

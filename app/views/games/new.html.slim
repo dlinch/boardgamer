@@ -1,4 +1,4 @@
-= simple_form_for :game, url: games_path, method: :post do |f|
+= simple_form_for @game, url: games_path, method: :post do |f|
   = f.input :name, placeholder: 'Name', required: true
   hr
   = f.button :submit, 'Create'

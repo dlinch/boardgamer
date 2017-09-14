@@ -1,0 +1,7 @@
+h1 Games Played
+
+- @user.games.each do |g|
+  p = g.name
+  p = "Plays: #{g.user_plays(@user)}"
+  a href= user_game_path(@user, g)
+    button Details

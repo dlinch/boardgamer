@@ -2,5 +2,6 @@ h1 Games
 
 - @games.each do |g|
   p = g.name
+  p = "Plays: #{g.plays.count}"
   a href= edit_game_path(g)
     button Edit
