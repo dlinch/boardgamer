@@ -1,8 +1,7 @@
 = simple_form_for @play, url: play_path, html: {method: :patch} do |f|
   = f.input :game_id, collection: Game.all, label_method: :name, value_method: :id, prompt: 'Choose a game...', required: true
-  / = f.input :user_ids, placeholder: 'Players', required: true, input_html: {multiple: true}
-  = f.input :user_ids, collection: User.all, label_method: :full_name, value_method: :id, prompt: 'Choose a game...', required: true, input_html: {multiple: true, data: {bindable: 'user-autocomplete', placeholder: 'Choose some players...'}}
-  = f.input :winner_id, collection: User.all, label_method: :full_name, value_method: :id, prompt: 'Choose a game...', input_html: {data: {bindable: 'user-autocomplete', placeholder: 'Choose some players...'}}
+  = f.input :user_ids, collection: User.all, label_method: :full_name, value_method: :id, required: true, input_html: {multiple: true, data: {bindable: 'user-autocomplete', placeholder: 'Choose some players...'}}
+  = f.input :winner_id, collection: User.all, label_method: :full_name, value_method: :id, prompt: 'Choose a winner...', input_html: {data: {bindable: 'user-autocomplete', placeholder: 'Choose some players...'}}
   hr
   = f.button :submit, 'Update'
 a href= play_path(@play)
