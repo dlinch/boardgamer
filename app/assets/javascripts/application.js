@@ -17,7 +17,8 @@
 //= require chosen-jquery
 //= require_tree .
 
-
-$(function() {
-  new Bindable().bindAll();
-});
+$(document).on('turbolinks:load', function() {
+  $(function() {
+    new Bindable().bindAll();
+  });
+})
