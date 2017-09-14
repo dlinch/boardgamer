@@ -4,7 +4,6 @@ class PlaysController < ApplicationController
   end
 
   def create
-    byebug
     if play = Play.create(play_params)
       redirect_to play_path(play.id)
     else
