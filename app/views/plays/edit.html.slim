@@ -5,3 +5,5 @@
   = f.input :winner_id, collection: User.all, label_method: :full_name, value_method: :id, prompt: 'Choose a game...', input_html: {data: {bindable: 'user-autocomplete', placeholder: 'Choose some players...'}}
   hr
   = f.button :submit, 'Update'
+a href= play_path(@play)
+  button Cancel

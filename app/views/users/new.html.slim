@@ -1,6 +1,8 @@
-= simple_form_for :user, url: users_path, method: :post do |f|
+= simple_form_for @user, url: users_path, method: :post do |f|
   = f.input :first_name, placeholder: 'First name', required: true
   = f.input :last_name, placeholder: 'Last name', required: true
   / = f.input :email, placeholder: 'email', required: true
   hr
   = f.button :submit, 'Create'
+a href= users_path
+  button Cancel
