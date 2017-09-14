@@ -9,11 +9,10 @@ class UserAutocomplete {
   }
 
   init() {
-    console.log('I AM HOOKED UP')
     this.setUpChosenSelect();
     // this.bindEvents();
   }
-  
+
   bindEvents() {
 
   }
