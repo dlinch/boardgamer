@@ -1,4 +1,6 @@
 h1 Games
 
 - @games.each do |g|
-   p = g.name
+  p = g.name
+  a href= edit_game_path(g)
+    button Edit
