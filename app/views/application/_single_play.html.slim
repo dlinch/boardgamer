@@ -1,0 +1,11 @@
+h2 = @play.game&.name
+h4 = @play.updated_at.strftime("%A, %B %d, %Y")
+h3 Players
+- @play.players.each do |pl|
+    p = pl.full_name
+
+h3 Winner
+p = @play.winner&.full_name
+
+a href= edit_play_path(@play)
+  button Edit

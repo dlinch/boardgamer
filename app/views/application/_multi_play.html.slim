@@ -1,0 +1,15 @@
+- @plays.each do |p|
+  h2 Game
+  p = p.game&.name
+  - if p.winner.present?
+    h2 Winner
+    p = p.winner&.full_name
+
+  h2 Players
+  - p.players.each do |player|
+    p = player.full_name
+  a href= edit_play_path(p)
+    button Edit
+  a href= user_play_path(@user, p)
+    button Details
+  hr
