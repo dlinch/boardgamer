@@ -1,11 +1,7 @@
 = simple_form_for @play, url: plays_path, method: :post do |f|
   = f.input :game_id, collection: Game.all, label_method: :name, value_method: :id, required: true
-  / = f.error :game
   = f.input :user_ids, collection: User.all, label_method: :full_name, value_method: :id, required: true, input_html: {multiple: true, data: {bindable: 'user-autocomplete', placeholder: 'Choose some players...'}}
-  / = f.error :user_ids
   = f.input :winner, collection: User.all, label_method: :full_name, value_method: :id, input_html: {data: {bindable: 'user-autocomplete', placeholder: 'Choose some players...'}}
-  / = f.error :winner
 
-  div.error = @play&.errors&.messages[:winner]
   hr
   = f.button :submit, 'Create'

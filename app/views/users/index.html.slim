@@ -1,4 +1,7 @@
 h1 Users
 
 - @users.each do |u|
-   p = u.full_name
+  a href= user_path(u)
+    p = u.full_name
+  a href= edit_user_path(u)
+    button Edit
