@@ -1,9 +1,14 @@
 class PlaysController < ApplicationController
-  def new; end
+  def new
+    @play = Play.new
+  end
 
   def create
-    if play = Play.create!(play_params)
+    if play = Play.create(play_params)
       redirect_to play_path(play.id)
+    else
+      @play = play
+      render :new
     end
   end
 
@@ -21,8 +26,12 @@ class PlaysController < ApplicationController
 
   def update
     if play = Play.find(params[:id])
-      play.update(play_params)
-      redirect_to play_path(play)
+      if play.update(play_params)
+        redirect_to play_path(play)
+      else
+        @play = play
+        render :edit
+      end
     end
   end
 
