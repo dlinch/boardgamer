@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :games, only: [:show, :index], controller: 'users/games'
-    resources :plays, controller: 'users/plays'
+    resources :plays, only: [:show, :index], controller: 'users/plays'
   end
   resources :games
   resources :plays
